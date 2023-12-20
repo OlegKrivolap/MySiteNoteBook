@@ -1,9 +1,6 @@
 from django.urls import path
 from .views import *
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
-from rest_framework_swagger.views import get_swagger_view
-
-shema_view = get_swagger_view(title='Pastebin API')
 urlpatterns = [
     path('', home, name='home'),
     path('tnx/', tnx, name='tnx'),
