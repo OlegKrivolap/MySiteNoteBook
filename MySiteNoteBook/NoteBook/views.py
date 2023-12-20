@@ -6,7 +6,7 @@ from rest_framework import generics
 from .models import *
 from .serializers import *
 # Create your views here.
-# @cache_control(max_age=3600)
+@cache_control(max_age=3600)
 def home(request):
     if request.method == "POST":
         form = NoteForm(request.POST)
