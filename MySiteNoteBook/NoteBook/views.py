@@ -8,18 +8,9 @@ from .serializers import *
 # Create your views here.
 @cache_control(max_age=3600)
 def home(request):
-    if request.method == "POST":
-        form = NoteForm(request.POST)
-
-        if form.is_valid():
-            form.save()
-
-            return HttpResponseRedirect("/tnx/")
-
-    else:
-        form = NoteForm()
-
-    return render(request, "home.html", {"form": form})
+    model = Note.objects.all()
+    context = {'model':model}
+    return render(request, template_name='home.html', context=context)
 
 
 def tnx(request):
