@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+ {% for i in note %}
+            {{ i.title }}
+            {{ i.text }}
+{{ i.media}}
+        {% endfor %}
+{% endblock %}
